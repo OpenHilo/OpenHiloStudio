@@ -1,0 +1,62 @@
+{
+  "name": "openhilo-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local workspace for AI, code and human workflows.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0"
+  },
+  "workspaces": [
+    "packages/generation-contracts",
+    "packages/platform-services",
+    "adapters/human-studio",
+    "apps/server",
+    "apps/studio"
+  ],
+  "scripts": {
+    "build": "npm run build:packages",
+    "build:packages": "npm run build --workspaces --if-present",
+    "test": "npm run test:offline",
+    "pretest:offline": "npm run build:packages",
+    "test:offline": "node scripts/test-offline.cjs",
+    "test:types": "npm run test:types --workspace @openhilo/server",
+    "check:boundaries": "node scripts/check-boundaries.cjs",
+    "check:packages": "node scripts/check-packages.cjs",
+    "check:notices": "node scripts/third-party-notices.cjs",
+    "notices:update": "node scripts/third-party-notices.cjs --write",
+    "check:export": "node scripts/check-export.cjs",
+    "check:consumers": "node scripts/verify-consumers.cjs",
+    "demo": "node apps/server/examples/offline-demo/run.cjs",
+    "check:core-source": "python3 scripts/verify-core-source.py",
+    "check:privacy": "python3 scripts/audit-publication.py"
+  },
+  "dependencies": {
+    "@openhilo/itt-contracts": "file:vendor/openhilo/openhilo-itt-contracts-0.1.0.tgz",
+    "@openhilo/ai-contracts": "file:vendor/openhilo/openhilo-ai-contracts-0.1.0.tgz",
+    "@openhilo/human-contracts": "file:vendor/openhilo/openhilo-human-contracts-0.1.0.tgz",
+    "@openhilo/runtime-contracts": "file:vendor/openhilo/openhilo-runtime-contracts-0.1.0.tgz",
+    "@openhilo/studio-contracts": "file:vendor/openhilo/openhilo-studio-contracts-0.1.0.tgz",
+    "@openhilo/compiler": "file:vendor/openhilo/openhilo-compiler-0.1.0.tgz",
+    "@openhilo/runtime": "file:vendor/openhilo/openhilo-runtime-0.1.0.tgz",
+    "@openhilo/tool-host": "file:vendor/openhilo/openhilo-tool-host-0.1.0.tgz",
+    "@openhilo/ai-codex": "file:vendor/openhilo/openhilo-ai-codex-0.1.0.tgz",
+    "@openhilo/ai-sdk": "file:vendor/openhilo/openhilo-ai-sdk-0.1.0.tgz",
+    "@openhilo/code-local": "file:vendor/openhilo/openhilo-code-local-0.1.0.tgz"
+  },
+  "devDependencies": {
+    "@types/jest": "30.0.0",
+    "@types/node": "24.19.2",
+    "jest": "30.5.2",
+    "ts-jest": "29.4.15",
+    "typescript": "6.0.3",
+    "node-cron": "4.6.0"
+  },
+  "overrides": {
+    "babel-plugin-istanbul": {
+      "test-exclude": "8.0.0"
+    },
+    "dompurify": "3.4.17"
+  }
+}

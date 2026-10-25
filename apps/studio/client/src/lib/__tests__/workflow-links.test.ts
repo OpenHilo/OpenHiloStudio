@@ -1,0 +1,6 @@
+import {workflowLibraryHref,resolveWorkflowReference} from '../workflow-links';
+const items=[{name:'one.review',ittPath:'/fixture/one/review/review.itt.impl.json',relativeIttPath:'one/review/review.itt.impl.json'},{name:'two.review',ittPath:'/fixture/two/review/review.itt.impl.json',relativeIttPath:'two/review/review.itt.impl.json'}];
+test('link encodes source identity and run context without guessing names',()=>{const url=new URL(workflowLibraryHref({intent:'review',ittPath:items[1].ittPath,run_id:'a?b'}),'https://local');expect(url.searchParams.get('source')).toBe(items[1].ittPath);expect(url.searchParams.get('fromRun')).toBe('a?b')});
+test('relative and exact paths select correct same-name workflow',()=>{expect(resolveWorkflowReference(items,items[1].relativeIttPath,'review')?.name).toBe('two.review')});
+test('missing explicit source does not silently resolve an identically named workflow',()=>{expect(resolveWorkflowReference(items,'/deleted/review.itt.impl.json','one.review')).toBeUndefined()});
+test('ambiguous legacy name remains unresolved',()=>{expect(resolveWorkflowReference(items,undefined,'review')).toBeUndefined();expect(resolveWorkflowReference(items,undefined,'one.review')?.name).toBe('one.review')});

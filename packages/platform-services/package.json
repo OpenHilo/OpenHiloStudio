@@ -1,0 +1,390 @@
+{
+  "name": "@openhilo/platform-services",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Explicitly configured entity storage, workflow file adapters and system capabilities",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./deployment-ownership": {
+      "types": "./dist/deployment-ownership.d.ts",
+      "require": "./dist/deployment-ownership.js",
+      "default": "./dist/deployment-ownership.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./entity-store": {
+      "types": "./dist/entity-store.d.ts",
+      "require": "./dist/entity-store.js",
+      "default": "./dist/entity-store.js"
+    },
+    "./compiler-capabilities": {
+      "types": "./dist/compiler-capabilities.d.ts",
+      "require": "./dist/compiler-capabilities.js",
+      "default": "./dist/compiler-capabilities.js"
+    },
+    "./brain-snapshot": {
+      "types": "./dist/brain-snapshot.d.ts",
+      "require": "./dist/brain-snapshot.js",
+      "default": "./dist/brain-snapshot.js"
+    },
+    "./system-executor": {
+      "types": "./dist/system-executor.d.ts",
+      "require": "./dist/system-executor.js",
+      "default": "./dist/system-executor.js"
+    },
+    "./tools": {
+      "types": "./dist/tools/index.d.ts",
+      "require": "./dist/tools/index.js",
+      "default": "./dist/tools/index.js"
+    },
+    "./tools/reads": {
+      "types": "./dist/tools/reads.d.ts",
+      "require": "./dist/tools/reads.js",
+      "default": "./dist/tools/reads.js"
+    },
+    "./publication": {
+      "types": "./dist/publication.d.ts",
+      "require": "./dist/publication.js",
+      "default": "./dist/publication.js"
+    },
+    "./worktree-pool": {
+      "types": "./dist/worktree-pool.d.ts",
+      "require": "./dist/worktree-pool.js",
+      "default": "./dist/worktree-pool.js"
+    },
+    "./skill-suggestions": {
+      "types": "./dist/skill-suggestions.d.ts",
+      "require": "./dist/skill-suggestions.js",
+      "default": "./dist/skill-suggestions.js"
+    },
+    "./generation-session": {
+      "types": "./dist/generation-session.d.ts",
+      "require": "./dist/generation-session.js",
+      "default": "./dist/generation-session.js"
+    },
+    "./workflow-files": {
+      "types": "./dist/workflow-files.d.ts",
+      "require": "./dist/workflow-files.js",
+      "default": "./dist/workflow-files.js"
+    },
+    "./generation-pipeline": {
+      "types": "./dist/generation-pipeline.d.ts",
+      "require": "./dist/generation-pipeline.js",
+      "default": "./dist/generation-pipeline.js"
+    },
+    "./generation-server": {
+      "types": "./dist/generation-server.d.ts",
+      "require": "./dist/generation-server.js",
+      "default": "./dist/generation-server.js"
+    },
+    "./generation-storage": {
+      "types": "./dist/generation-storage.d.ts",
+      "require": "./dist/generation-storage.js",
+      "default": "./dist/generation-storage.js"
+    },
+    "./worker-supervisor": {
+      "types": "./dist/worker-supervisor.d.ts",
+      "require": "./dist/worker-supervisor.js",
+      "default": "./dist/worker-supervisor.js"
+    },
+    "./worker-protocol": {
+      "types": "./dist/worker-protocol.d.ts",
+      "require": "./dist/worker-protocol.js",
+      "default": "./dist/worker-protocol.js"
+    },
+    "./worker-system-host": {
+      "types": "./dist/worker-system-host.d.ts",
+      "require": "./dist/worker-system-host.js",
+      "default": "./dist/worker-system-host.js"
+    },
+    "./file-config": {
+      "types": "./dist/file-config.d.ts",
+      "require": "./dist/file-config.js",
+      "default": "./dist/file-config.js"
+    },
+    "./configuration-service": {
+      "types": "./dist/configuration-service.d.ts",
+      "require": "./dist/configuration-service.js",
+      "default": "./dist/configuration-service.js"
+    },
+    "./schedule-service": {
+      "types": "./dist/schedule-service.d.ts",
+      "require": "./dist/schedule-service.js",
+      "default": "./dist/schedule-service.js"
+    },
+    "./scheduler": {
+      "types": "./dist/scheduler.d.ts",
+      "require": "./dist/scheduler.js",
+      "default": "./dist/scheduler.js"
+    },
+    "./run-history": {
+      "types": "./dist/run-history.d.ts",
+      "require": "./dist/run-history.js",
+      "default": "./dist/run-history.js"
+    },
+    "./human-history": {
+      "types": "./dist/human-history.d.ts",
+      "require": "./dist/human-history.js",
+      "default": "./dist/human-history.js"
+    },
+    "./ai-questions": {
+      "types": "./dist/ai-questions.d.ts",
+      "require": "./dist/ai-questions.js",
+      "default": "./dist/ai-questions.js"
+    },
+    "./worker-questions": {
+      "types": "./dist/worker-questions.d.ts",
+      "require": "./dist/worker-questions.js",
+      "default": "./dist/worker-questions.js"
+    },
+    "./ai-questions-cli": {
+      "types": "./dist/ai-questions-cli.d.ts",
+      "require": "./dist/ai-questions-cli.js",
+      "default": "./dist/ai-questions-cli.js"
+    },
+    "./human-submission": {
+      "types": "./dist/human-submission.d.ts",
+      "require": "./dist/human-submission.js",
+      "default": "./dist/human-submission.js"
+    },
+    "./entity-service": {
+      "types": "./dist/entity-service.d.ts",
+      "require": "./dist/entity-service.js",
+      "default": "./dist/entity-service.js"
+    },
+    "./filter-service": {
+      "types": "./dist/filter-service.d.ts",
+      "require": "./dist/filter-service.js",
+      "default": "./dist/filter-service.js"
+    },
+    "./stats-service": {
+      "types": "./dist/stats-service.d.ts",
+      "require": "./dist/stats-service.js",
+      "default": "./dist/stats-service.js"
+    },
+    "./broadcaster": {
+      "types": "./dist/broadcaster.d.ts",
+      "require": "./dist/broadcaster.js",
+      "default": "./dist/broadcaster.js"
+    },
+    "./worker-ai-host": {
+      "types": "./dist/worker-ai-host.d.ts",
+      "require": "./dist/worker-ai-host.js",
+      "default": "./dist/worker-ai-host.js"
+    },
+    "./worker-system-client": {
+      "types": "./dist/worker-system-client.d.ts",
+      "require": "./dist/worker-system-client.js",
+      "default": "./dist/worker-system-client.js"
+    },
+    "./worker-run-path": {
+      "types": "./dist/worker-run-path.d.ts",
+      "require": "./dist/worker-run-path.js",
+      "default": "./dist/worker-run-path.js"
+    },
+    "./generation-service": {
+      "types": "./dist/generation-service.d.ts",
+      "require": "./dist/generation-service.js",
+      "default": "./dist/generation-service.js"
+    },
+    "./data-migration": {
+      "types": "./dist/data-migration.d.ts",
+      "require": "./dist/data-migration.js",
+      "default": "./dist/data-migration.js"
+    },
+    "./data-migration-cli": {
+      "types": "./dist/data-migration-cli.d.ts",
+      "require": "./dist/data-migration-cli.js",
+      "default": "./dist/data-migration-cli.js"
+    },
+    "./deployment-config": {
+      "types": "./dist/deployment-config.d.ts",
+      "require": "./dist/deployment-config.js",
+      "default": "./dist/deployment-config.js"
+    },
+    "./migration-inspection": {
+      "types": "./dist/migration-inspection.d.ts",
+      "require": "./dist/migration-inspection.js",
+      "default": "./dist/migration-inspection.js"
+    },
+    "./path-migration": {
+      "types": "./dist/path-migration.d.ts",
+      "require": "./dist/path-migration.js",
+      "default": "./dist/path-migration.js"
+    },
+    "./brain-template": {
+      "types": "./dist/brain-template.d.ts",
+      "require": "./dist/brain-template.js",
+      "default": "./dist/brain-template.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "deployment-ownership": [
+        "dist/deployment-ownership.d.ts"
+      ],
+      "entity-store": [
+        "dist/entity-store.d.ts"
+      ],
+      "compiler-capabilities": [
+        "dist/compiler-capabilities.d.ts"
+      ],
+      "brain-snapshot": [
+        "dist/brain-snapshot.d.ts"
+      ],
+      "system-executor": [
+        "dist/system-executor.d.ts"
+      ],
+      "tools": [
+        "dist/tools/index.d.ts"
+      ],
+      "tools/reads": [
+        "dist/tools/reads.d.ts"
+      ],
+      "publication": [
+        "dist/publication.d.ts"
+      ],
+      "worktree-pool": [
+        "dist/worktree-pool.d.ts"
+      ],
+      "skill-suggestions": [
+        "dist/skill-suggestions.d.ts"
+      ],
+      "generation-session": [
+        "dist/generation-session.d.ts"
+      ],
+      "workflow-files": [
+        "dist/workflow-files.d.ts"
+      ],
+      "generation-pipeline": [
+        "dist/generation-pipeline.d.ts"
+      ],
+      "generation-server": [
+        "dist/generation-server.d.ts"
+      ],
+      "generation-storage": [
+        "dist/generation-storage.d.ts"
+      ],
+      "worker-supervisor": [
+        "dist/worker-supervisor.d.ts"
+      ],
+      "worker-protocol": [
+        "dist/worker-protocol.d.ts"
+      ],
+      "worker-system-host": [
+        "dist/worker-system-host.d.ts"
+      ],
+      "file-config": [
+        "dist/file-config.d.ts"
+      ],
+      "configuration-service": [
+        "dist/configuration-service.d.ts"
+      ],
+      "schedule-service": [
+        "dist/schedule-service.d.ts"
+      ],
+      "scheduler": [
+        "dist/scheduler.d.ts"
+      ],
+      "run-history": [
+        "dist/run-history.d.ts"
+      ],
+      "human-history": [
+        "dist/human-history.d.ts"
+      ],
+      "ai-questions": [
+        "dist/ai-questions.d.ts"
+      ],
+      "worker-questions": [
+        "dist/worker-questions.d.ts"
+      ],
+      "ai-questions-cli": [
+        "dist/ai-questions-cli.d.ts"
+      ],
+      "human-submission": [
+        "dist/human-submission.d.ts"
+      ],
+      "entity-service": [
+        "dist/entity-service.d.ts"
+      ],
+      "filter-service": [
+        "dist/filter-service.d.ts"
+      ],
+      "stats-service": [
+        "dist/stats-service.d.ts"
+      ],
+      "broadcaster": [
+        "dist/broadcaster.d.ts"
+      ],
+      "worker-ai-host": [
+        "dist/worker-ai-host.d.ts"
+      ],
+      "worker-system-client": [
+        "dist/worker-system-client.d.ts"
+      ],
+      "worker-run-path": [
+        "dist/worker-run-path.d.ts"
+      ],
+      "generation-service": [
+        "dist/generation-service.d.ts"
+      ],
+      "data-migration": [
+        "dist/data-migration.d.ts"
+      ],
+      "data-migration-cli": [
+        "dist/data-migration-cli.d.ts"
+      ],
+      "deployment-config": [
+        "dist/deployment-config.d.ts"
+      ],
+      "migration-inspection": [
+        "dist/migration-inspection.d.ts"
+      ],
+      "path-migration": [
+        "dist/path-migration.d.ts"
+      ],
+      "brain-template": [
+        "dist/brain-template.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "examples",
+    "THIRD_PARTY_NOTICES.txt"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.cjs"
+  },
+  "dependencies": {
+    "@openhilo/itt-contracts": "0.1.0",
+    "@openhilo/runtime-contracts": "0.1.0",
+    "@openhilo/tool-host": "0.1.0",
+    "better-sqlite3": "^13.0.3",
+    "@openhilo/ai-contracts": "0.1.0",
+    "@openhilo/generation-contracts": "0.1.0",
+    "@openhilo/compiler": "0.1.0",
+    "typescript": "6.0.3",
+    "@openhilo/human-contracts": "0.1.0",
+    "@openhilo/runtime": "0.1.0"
+  },
+  "bin": {
+    "intentorch-worktrees": "dist/worktree-cli.js",
+    "intentorch-questions": "dist/ai-questions-cli.js",
+    "intentorch-migrate": "dist/data-migration-cli.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13"
+  }
+}

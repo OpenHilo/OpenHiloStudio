@@ -1,0 +1,72 @@
+{
+  "name": "@openhilo/studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenHilo Studio: create, review, run and inspect AI, Code and Human workflows",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./client/src/mount.tsx",
+      "import": "./client/src/mount.tsx",
+      "default": "./client/src/mount.tsx"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "client/src/mount.tsx"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "client",
+    "src",
+    "tsconfig.json",
+    "tsconfig.client.json",
+    "vite.config.ts",
+    "README.md",
+    "THIRD_PARTY_NOTICES.txt",
+    "THIRD_PARTY_NOTICES.html"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.client.json && tsc -p tsconfig.json && vite build --logLevel warn",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "4.7.0",
+    "@openhilo/human-contracts": "0.1.0",
+    "@openhilo/itt-contracts": "0.1.0",
+    "@openhilo/studio-contracts": "0.1.0",
+    "@radix-ui/react-dialog": "1.1.15",
+    "elkjs": "0.12.0",
+    "monaco-editor": "0.57.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-json-tree": "0.20.0",
+    "react-router-dom": "7.18.4",
+    "shiki": "4.0.2",
+    "tailwindcss": "4.2.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.2.2",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.5"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "name": "@openhilo/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Explicitly composed OpenHilo HTTP server and Studio API routes",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./routes/runs": {
+      "types": "./dist/routes/runs.d.ts",
+      "require": "./dist/routes/runs.js",
+      "default": "./dist/routes/runs.js"
+    },
+    "./routes/events": {
+      "types": "./dist/routes/events.d.ts",
+      "require": "./dist/routes/events.js",
+      "default": "./dist/routes/events.js"
+    },
+    "./routes/stats": {
+      "types": "./dist/routes/stats.d.ts",
+      "require": "./dist/routes/stats.js",
+      "default": "./dist/routes/stats.js"
+    },
+    "./routes/human": {
+      "types": "./dist/routes/human.d.ts",
+      "require": "./dist/routes/human.js",
+      "default": "./dist/routes/human.js"
+    },
+    "./routes/filters": {
+      "types": "./dist/routes/filters.d.ts",
+      "require": "./dist/routes/filters.js",
+      "default": "./dist/routes/filters.js"
+    },
+    "./routes/schedules": {
+      "types": "./dist/routes/schedules.d.ts",
+      "require": "./dist/routes/schedules.js",
+      "default": "./dist/routes/schedules.js"
+    },
+    "./routes/entity": {
+      "types": "./dist/routes/entity.d.ts",
+      "require": "./dist/routes/entity.js",
+      "default": "./dist/routes/entity.js"
+    },
+    "./routes/namespaces": {
+      "types": "./dist/routes/namespaces.d.ts",
+      "require": "./dist/routes/namespaces.js",
+      "default": "./dist/routes/namespaces.js"
+    },
+    "./routes/application": {
+      "types": "./dist/routes/application.d.ts",
+      "require": "./dist/routes/application.js",
+      "default": "./dist/routes/application.js"
+    },
+    "./routes/translate-input": {
+      "types": "./dist/routes/translate-input.d.ts",
+      "require": "./dist/routes/translate-input.js",
+      "default": "./dist/routes/translate-input.js"
+    },
+    "./routes/translate": {
+      "types": "./dist/routes/translate.d.ts",
+      "require": "./dist/routes/translate.js",
+      "default": "./dist/routes/translate.js"
+    },
+    "./routes/config": {
+      "types": "./dist/routes/config.d.ts",
+      "require": "./dist/routes/config.js",
+      "default": "./dist/routes/config.js"
+    },
+    "./workflow-worker": {
+      "types": "./dist/workflow-worker.d.ts",
+      "require": "./dist/workflow-worker.js",
+      "default": "./dist/workflow-worker.js"
+    },
+    "./worker-launch": {
+      "types": "./dist/worker-launch.d.ts",
+      "require": "./dist/worker-launch.js",
+      "default": "./dist/worker-launch.js"
+    },
+    "./deployment-lifecycle": {
+      "types": "./dist/deployment-lifecycle.d.ts",
+      "require": "./dist/deployment-lifecycle.js",
+      "default": "./dist/deployment-lifecycle.js"
+    },
+    "./local-deployment": {
+      "types": "./dist/local-deployment.d.ts",
+      "require": "./dist/local-deployment.js",
+      "default": "./dist/local-deployment.js"
+    },
+    "./local-initialize": {
+      "types": "./dist/local-initialize.d.ts",
+      "require": "./dist/local-initialize.js",
+      "default": "./dist/local-initialize.js"
+    },
+    "./local-cli": {
+      "types": "./dist/local-cli.d.ts",
+      "require": "./dist/local-cli.js",
+      "default": "./dist/local-cli.js"
+    },
+    "./deployment-process": {
+      "types": "./dist/deployment-process.d.ts",
+      "require": "./dist/deployment-process.js",
+      "default": "./dist/deployment-process.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "routes/runs": [
+        "dist/routes/runs.d.ts"
+      ],
+      "routes/events": [
+        "dist/routes/events.d.ts"
+      ],
+      "routes/stats": [
+        "dist/routes/stats.d.ts"
+      ],
+      "routes/human": [
+        "dist/routes/human.d.ts"
+      ],
+      "routes/filters": [
+        "dist/routes/filters.d.ts"
+      ],
+      "routes/schedules": [
+        "dist/routes/schedules.d.ts"
+      ],
+      "routes/entity": [
+        "dist/routes/entity.d.ts"
+      ],
+      "routes/namespaces": [
+        "dist/routes/namespaces.d.ts"
+      ],
+      "routes/application": [
+        "dist/routes/application.d.ts"
+      ],
+      "routes/translate-input": [
+        "dist/routes/translate-input.d.ts"
+      ],
+      "routes/translate": [
+        "dist/routes/translate.d.ts"
+      ],
+      "routes/config": [
+        "dist/routes/config.d.ts"
+      ],
+      "workflow-worker": [
+        "dist/workflow-worker.d.ts"
+      ],
+      "worker-launch": [
+        "dist/worker-launch.d.ts"
+      ],
+      "deployment-lifecycle": [
+        "dist/deployment-lifecycle.d.ts"
+      ],
+      "local-deployment": [
+        "dist/local-deployment.d.ts"
+      ],
+      "local-initialize": [
+        "dist/local-initialize.d.ts"
+      ],
+      "local-cli": [
+        "dist/local-cli.d.ts"
+      ],
+      "deployment-process": [
+        "dist/deployment-process.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "examples",
+    "THIRD_PARTY_NOTICES.txt"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && npm run test:types && node --test test/*.test.cjs",
+    "test:types": "tsc --ignoreConfig --types node --noEmit --strict --skipLibCheck --target ES2022 --module Node16 --moduleResolution Node16 test/*-contract.ts"
+  },
+  "dependencies": {
+    "@openhilo/platform-services": "0.1.0",
+    "@openhilo/ai-contracts": "0.1.0",
+    "@openhilo/runtime-contracts": "0.1.0",
+    "@openhilo/studio-contracts": "0.1.0",
+    "fastify": "5.12.7",
+    "@fastify/cors": "10.1.0",
+    "@fastify/static": "10.1.5",
+    "@openhilo/runtime": "0.1.0",
+    "@openhilo/generation-contracts": "0.1.0",
+    "@openhilo/itt-contracts": "0.1.0",
+    "@openhilo/human-contracts": "0.1.0",
+    "@openhilo/human-studio": "0.1.0"
+  },
+  "bin": {
+    "openhilo-server": "dist/local-cli.js",
+    "intentorch-server": "dist/local-cli.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "node-cron": "4.6.0"
+  },
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "OpenHilo Studio",
+  "short_name": "OpenHilo",
+  "icons": [
+    {
+      "src": "app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "browser"
+}

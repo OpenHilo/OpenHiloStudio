@@ -1,0 +1,168 @@
+{
+  "standardwebhooks@1.1.1": [
+    {
+      "file": "standard-libraries-LICENSE",
+      "url": "https://raw.githubusercontent.com/standard-webhooks/standard-webhooks/b4d2c14fc5b4ccff3ff271e3b087dff812254c59/libraries/LICENSE",
+      "sha256": "5ec8c7b26b64d881a6706617bed25c049f97f2f35de034c756de8546fd6dbe27",
+      "note": "MIT license for the libraries, from the package release gitHead b4d2c14fc5b4ccff3ff271e3b087dff812254c59. The repository root license applies to its specification and is not substituted here."
+    }
+  ],
+  "abstract-logging@2.0.1": [
+    {
+      "file": "abstract-license.txt",
+      "url": "https://jsumners.mit-license.org/license.txt",
+      "sha256": "af15a41ce02371f77476b7a201e036c0ae6c5d6d2a233b4e5f0fd5fca123457e",
+      "note": "The published README links to the author's MIT license service. Captured 2026-09-28; the service generates the current copyright year. Original text preserved."
+    }
+  ],
+  "react-remove-scroll-bar@2.3.8": [
+    {
+      "file": "scroll-LICENSE",
+      "url": "https://raw.githubusercontent.com/theKashey/react-remove-scroll-bar/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/LICENSE",
+      "sha256": "a79aae0c0f21990d9d963bb3c5a79cdcea9a46f8523ba55c58d7fe776b6ebc84",
+      "note": "Pinned upstream license at 8ca9ba5ea52de03308fe8ced94f7b159a44d28ff. The npm gitHead b3b1287aad81def2e2ae707274b74531b61ddbaf is unavailable from the public repository; this is explicitly an upstream-license supplement, not a claim to have recovered that release commit."
+    }
+  ],
+  "@radix-ui/react-compose-refs@1.1.2": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-escape-keydown@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-callback-ref@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-id@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-layout-effect@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-context@1.1.2": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "shiki@4.0.2": [
+    {
+      "file": "shiki-NOTICE",
+      "url": "https://raw.githubusercontent.com/shikijs/shiki/7a1007dd5befe51a0c58925ac6de102691f5a0e4/packages/shiki/NOTICE",
+      "sha256": "8a3080bbe22f4d591424104b08bfdfff30e5317cc8bdefeba0d17272f23ca13a",
+      "note": "Shiki v4.0.2 (7a1007dd5befe51a0c58925ac6de102691f5a0e4) includes this notice in source but omits it from the npm archive. The full referenced resource notices are included below under @shikijs/langs and @shikijs/themes."
+    }
+  ],
+  "@shikijs/langs@4.0.2": [
+    {
+      "file": "tm-grammars-NOTICE",
+      "url": "https://registry.npmjs.org/tm-grammars/-/tm-grammars-1.31.6.tgz",
+      "sha256": "b8e325ab8b5cfc9170794a8c0cf52bf13b43baba459aa4365182f337db68882c",
+      "note": "Original tm-grammars@1.31.6 NOTICE from its npm tarball, verified against the SHA-512 in Shiki v4.0.2 pnpm-lock.yaml. This inventory includes unused grammars/themes; Studio only imports TypeScript and GitHub light/dark-default themes. Other assets are not included in the browser build."
+    }
+  ],
+  "@shikijs/themes@4.0.2": [
+    {
+      "file": "tm-themes-NOTICE",
+      "url": "https://registry.npmjs.org/tm-themes/-/tm-themes-1.12.1.tgz",
+      "sha256": "dcfef6e3b5642d22523c2559df627fbaf26d08bf7814fa49d1f30fdc08dd71be",
+      "note": "Original tm-themes@1.12.1 NOTICE from its npm tarball, verified against the SHA-512 in Shiki v4.0.2 pnpm-lock.yaml. This inventory includes unused grammars/themes; Studio only imports TypeScript and GitHub light/dark-default themes. Other assets are not included in the browser build."
+    }
+  ],
+  "@shikijs/engine-oniguruma@4.0.2": [
+    {
+      "file": "oniguruma-LICENSE",
+      "url": "https://raw.githubusercontent.com/shikijs/shiki/7a1007dd5befe51a0c58925ac6de102691f5a0e4/packages/engine-oniguruma/src/oniguruma/LICENSE",
+      "sha256": "ddde8aba8fe72b4830e27901fc78733eb6db7b6c653161075de213a6adeda3fd",
+      "note": "Oniguruma license accompanying the embedded WASM source in Shiki v4.0.2 at 7a1007dd5befe51a0c58925ac6de102691f5a0e4; additional to the wrapper package MIT license."
+    },
+    {
+      "file": "vscode-oniguruma-NOTICES.txt",
+      "url": "https://registry.npmjs.org/vscode-oniguruma/-/vscode-oniguruma-1.7.0.tgz",
+      "sha256": "615d94d89eacc046241518c247f6650a5df80d1adf4b284a756f500867620b35",
+      "note": "Oniguruma and Emscripten notices from vscode-oniguruma 1.7.0, whose SHA-512 is pinned in Shiki v4.0.2 pnpm-lock.yaml. This covers embedded WASM in addition to the TypeScript wrapper."
+    }
+  ],
+  "jsonify@0.0.1": [
+    {
+      "file": "jsonify-README.md",
+      "url": "https://registry.npmjs.org/jsonify/-/jsonify-0.0.1.tgz",
+      "sha256": "1c5c071519aa740a5f69212af7891f63f4cdaad595f7a91e8d391c485f3de97f",
+      "note": "The installed package has no separate LICENSE file. Its original README explicitly declares public domain; preserved in full rather than substituting an invented license text."
+    }
+  ],
+  "@radix-ui/number@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-direction@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-previous@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-rect@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/react-use-size@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ],
+  "@radix-ui/rect@1.1.1": [
+    {
+      "file": "radix-LICENSE",
+      "url": "https://raw.githubusercontent.com/radix-ui/primitives/fcef0668a5c827e5a4baac405474d75680f9a4eb/LICENSE",
+      "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138",
+      "note": "Repository license from npm release gitHead fcef0668a5c827e5a4baac405474d75680f9a4eb."
+    }
+  ]
+}

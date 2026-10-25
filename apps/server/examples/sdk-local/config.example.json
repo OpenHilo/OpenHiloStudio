@@ -1,0 +1,17 @@
+{
+  "format": "intentorch.deployment",
+  "version": 1,
+  "core": { "legacyFields": {} },
+  "domain": { "selection": { "id": "generic", "version": 1 }, "applications": {} },
+  "ai": {
+    "execution": {
+      "adapter": "sdk",
+      "default_profile": "general",
+      "profiles": {
+        "general": { "provider": "openai", "model": "REPLACE_WITH_YOUR_MODEL", "api_key_env": "OPENAI_API_KEY" }
+      }
+    },
+    "implementations": {}
+  },
+  "legacy": {}
+}

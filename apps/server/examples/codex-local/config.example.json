@@ -1,0 +1,25 @@
+{
+  "format": "intentorch.deployment",
+  "version": 1,
+  "core": {
+    "legacyFields": {}
+  },
+  "domain": {
+    "selection": {
+      "id": "generic",
+      "version": 1
+    },
+    "applications": {}
+  },
+  "ai": {
+    "execution": {
+      "adapter": "codex",
+      "cli_path": "codex",
+      "effort": "low",
+      "sandbox": "workspace-write",
+      "timeout_ms": 43200000
+    },
+    "implementations": {}
+  },
+  "legacy": {}
+}

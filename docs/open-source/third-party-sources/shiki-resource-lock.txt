@@ -1,0 +1,12 @@
+Source: https://raw.githubusercontent.com/shikijs/shiki/7a1007dd5befe51a0c58925ac6de102691f5a0e4/pnpm-lock.yaml
+
+  tm-grammars@1.31.6:
+    resolution: {integrity: sha512-V2nz1Z09xiUjpN2ILRw8jlpOoIN1ZtAfAqXawRZi/aPbA1Q3IEl9VnjCKOHLqCPxXv/HAL6zBml2OcxWa2wd6A==}
+
+  tm-themes@1.12.1:
+    resolution: {integrity: sha512-CjDpAN+lZopqqfa4TPhbzI9Z4EJk016rNpCba9V1f94N+AlXnybW6TMxGkKmdpwleDzhvEe5APTPg1b0XxKKug==}
+
+  to-regex-range@5.0.1:
+
+  vscode-oniguruma@1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}

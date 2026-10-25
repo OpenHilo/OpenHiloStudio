@@ -1,0 +1,45 @@
+{
+  "format": "intentorch.deployment",
+  "version": 1,
+  "core": {
+    "legacyFields": {}
+  },
+  "domain": {
+    "selection": {
+      "id": "generic",
+      "version": 1
+    },
+    "applications": {}
+  },
+  "ai": {
+    "execution": {
+      "adapter": "routed",
+      "routes": {
+        "default": {
+          "defaultLevel": "medium",
+          "levels": {
+            "medium": {
+              "adapter": "codex",
+              "effort": "low",
+              "sandbox": "workspace-write",
+              "timeout_ms": 43200000
+            }
+          }
+        },
+        "coding": {
+          "defaultLevel": "pro",
+          "levels": {
+            "pro": {
+              "adapter": "codex",
+              "effort": "medium",
+              "sandbox": "workspace-write",
+              "timeout_ms": 43200000
+            }
+          }
+        }
+      }
+    },
+    "implementations": {}
+  },
+  "legacy": {}
+}
