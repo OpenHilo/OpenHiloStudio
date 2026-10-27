@@ -21,3 +21,5 @@ These checks use isolated data and do not restart a deployed server, replay user
 ## CI follow-up
 
 The first pushed revision passed Linux Node 22/24 tests, types and package checks, and the public core-source reconstruction job. The notice check then detected stale integrity hashes for the six updated core archives. Regenerating all eight notice/inventory artifacts updates only archive integrity and lockfile hashes; license texts and runtime behavior are unchanged. Local `check:notices` and `check:export` passed after regeneration. Check the GitHub Actions run for the final revision for the complete matrix result.
+
+The next run passed both Linux jobs and core-source reconstruction. macOS arm64 jobs remained queued; the preceding run had already reported hosted arm64 capacity constraints and eventual failure to acquire a runner. CI now pins the documented standard `macos-15-intel` label for both Node versions, retaining all test steps. Local arm64 verification above remains separate from hosted Intel coverage.

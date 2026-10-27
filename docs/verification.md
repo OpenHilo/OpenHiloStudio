@@ -1,6 +1,8 @@
 # Testing and supported environments
 
-OpenHilo Studio supports Node 22 and 24 on macOS and Linux. The [Studio verification workflow](https://github.com/OpenHilo/OpenHiloStudio/actions/workflows/ci.yml) runs the full matrix and checks that the bundled OpenHilo dependencies can be reproduced from public source. Open a workflow run to see the result for a particular commit.
+OpenHilo Studio supports Node 22 and 24 on macOS and Linux. The [Studio verification workflow](https://github.com/OpenHilo/OpenHiloStudio/actions/workflows/ci.yml) runs Node 22/24 on Linux x64 and macOS 15 Intel, and checks that the bundled OpenHilo dependencies can be reproduced from public source. Open a workflow run to see the result for a particular commit.
+
+Hosted macOS arm64 capacity has caused jobs to remain unassigned. CI therefore pins the standard `macos-15-intel` runner; local arm64 verification is recorded separately and is not claimed as a hosted CI result. See [GitHub runner labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).
 
 ## Run the checks
 

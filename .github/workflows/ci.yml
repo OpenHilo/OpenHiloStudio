@@ -7,7 +7,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        # Pin standard Intel runners while hosted arm64 capacity is constrained.
+        os: [ubuntu-latest, macos-15-intel]
         node: [22, 24]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 25
