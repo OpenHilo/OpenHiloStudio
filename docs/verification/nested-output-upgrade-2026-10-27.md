@@ -17,3 +17,7 @@ Typed AI outputs now retain nested structure through the OpenHilo compiler and e
 Run `npm run test:offline`, `npm run check:export` and `npm run check:consumers`. With a populated cache, independent installation can use `npm run check:consumers -- --offline --locked-dependencies --cache <absolute-cache-directory>`. The targeted API test is `tests/integration/core-upgrade-compatibility.test.cjs`.
 
 These checks use isolated data and do not restart a deployed server, replay user runs, or publish packages.
+
+## CI follow-up
+
+The first pushed revision passed Linux Node 22/24 tests, types and package checks, and the public core-source reconstruction job. The notice check then detected stale integrity hashes for the six updated core archives. Regenerating all eight notice/inventory artifacts updates only archive integrity and lockfile hashes; license texts and runtime behavior are unchanged. Local `check:notices` and `check:export` passed after regeneration. Check the GitHub Actions run for the final revision for the complete matrix result.

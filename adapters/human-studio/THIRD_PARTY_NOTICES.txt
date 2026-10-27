@@ -52,7 +52,7 @@ No external runtime dependencies in this package closure.
 ================================================================================
 @openhilo/itt-contracts@0.1.0
 Declared license: MIT
-Integrity: sha512-hD9nAGKNFPCQLjTyK7yaN+W9RKlRKRnFv6yCkxCrFYnuIDFhfzXuoWUlndLwaT6JfJ/zrSxXJjX1Ud+AhCGXtg==
+Integrity: sha512-UqFVo1ql5mOAcH0q91LhT57GhgwfYfGh6xblr+3GQsG5O+ZWCh9RUO80/KGPM1az3FP0683NEShEwS54GuMmcg==
 
 --- @openhilo/itt-contracts@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80

@@ -9,7 +9,7 @@ Studio additionally includes notices for its build helpers and embedded upstream
 ================================================================================
 @openhilo/ai-contracts@0.1.0
 Declared license: MIT
-Integrity: sha512-o2Ks+mw7aXrwYkD4vj6P/KXCjqhLQkYuNv91Y7NeiYfaLZNfRcI2+a27OkykdPhYuuWBDOpAgV9Me7S2Ug+pmQ==
+Integrity: sha512-Fd/hdxSQfkW0rik92xDLDfaYM+VUGbdXt/K4R/NvRfW4lk8fYAXexxiD79/K4t23UqHr4tkzV5VFI9M36JYVLA==
 
 --- @openhilo/ai-contracts@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80
@@ -52,7 +52,7 @@ No external runtime dependencies in this package closure.
 ================================================================================
 @openhilo/compiler@0.1.0
 Declared license: MIT
-Integrity: sha512-6u1gJAk9D+ORCAt0CmqaPkSp9vYIx4ZdOzCuaSm0QvGK7rqmzL/Ic8m5S1lWb9cYiKVmuDbsGKzXkSw1auKQ1A==
+Integrity: sha512-KT1dTPjKXzU5yzsR48EWjXAMY7j92epsQUgi+pMXkKpPXg4bi+xb468qS6OliSCok0KeewvwaqBziFpkvPxy7Q==
 
 --- @openhilo/compiler@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80
@@ -200,7 +200,7 @@ No external runtime dependencies in this package closure.
 ================================================================================
 @openhilo/itt-contracts@0.1.0
 Declared license: MIT
-Integrity: sha512-hD9nAGKNFPCQLjTyK7yaN+W9RKlRKRnFv6yCkxCrFYnuIDFhfzXuoWUlndLwaT6JfJ/zrSxXJjX1Ud+AhCGXtg==
+Integrity: sha512-UqFVo1ql5mOAcH0q91LhT57GhgwfYfGh6xblr+3GQsG5O+ZWCh9RUO80/KGPM1az3FP0683NEShEwS54GuMmcg==
 
 --- @openhilo/itt-contracts@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80
@@ -286,7 +286,7 @@ No external runtime dependencies in this package closure.
 ================================================================================
 @openhilo/runtime@0.1.0
 Declared license: MIT
-Integrity: sha512-JeBXaUl8dA2/0ISEFR8mcsfCVJYsd9GiG06QdZj3gIEIZ3Qx39SZY8geavhGi2b7YmB/lCsxXeWTBCp7aUxzWA==
+Integrity: sha512-PSeBHKod7jga2uo5kzJaSOHTF1VuWah9LdEecP2BCnHTTG6EHPeeIiyjgQeCj+NN8r6emali7Ika/mh+hA4GOw==
 
 --- @openhilo/runtime@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80
