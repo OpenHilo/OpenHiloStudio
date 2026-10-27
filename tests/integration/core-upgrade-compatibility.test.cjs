@@ -33,6 +33,10 @@ async function setup(t, mode) {
     hold: code('hold', 'touch code-ready; while [ ! -f release ]; do sleep 0.05; done; printf "drained\\n" >> effects', 'after'),
     after: code('after', 'printf "after\\n" >> effects', 'END'),
   };
+  if (mode === 'shape') {
+    nodes.ai.outputs = {plan:'json'};
+    nodes.ai.outputShapes = {plan:{type:'object',properties:{urls:{shape:{type:'array',items:{type:'text'}}}}}};
+  }
   fs.writeFileSync(path.join(home, 'intents/fixture.itt.impl.json'), JSON.stringify({ version: 2, entry: 'before', nodes }));
   const request = async (method, url, payload, status = 200) => {
     const response = await host.app.inject({ method, url, ...(payload === undefined ? {} : { payload }) });
@@ -157,4 +161,15 @@ test('confirmed AI cancellation bypasses fallback and rejects explicit resume th
   assert.ok(rejected.statusCode >= 400);
   assert.equal(f.host.workers.isActive(f.runId), false);
   assert.equal(fs.readFileSync(path.join(f.workdir, 'effects'), 'utf8'), 'before\n');
+});
+
+
+test('Studio exposes nested output validation failure before downstream Code and does not automatically retry', async t => {
+  const f=await setup(t,'shape'); const result=await f.idle();
+  assert.equal(result.status,'failed');
+  const failed=result.events.findLast(e=>e.event==='run_failed');
+  assert.equal(failed.failure.code,'invalid_output'); assert.match(failed.failure.message,/plan.urls: required/);
+  assert.equal(fs.readFileSync(path.join(f.workdir,'effects'),'utf8'),'before\n');
+  assert.equal(fs.readFileSync(path.join(f.workdir,'ai-calls'),'utf8'),'call\n');
+  assert.equal(f.host.workers.isActive(f.runId),false);
 });

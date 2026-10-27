@@ -42,7 +42,7 @@ exports.createComposition = request => {
                   else operation.signal.addEventListener('abort', resolve, { once: true });
                 });
                 if (!operation.signal.aborted) fs.appendFileSync(path.join(context.workdir, 'ai-effects'), 'done\n');
-                return { status: 'completed', outputs: {}, artifacts: [] };
+                return { status: 'completed', outputs: mode === 'shape' ? {plan:{queries:[]}} : {}, artifacts: [] };
               } finally { fs.writeFileSync(path.join(context.workdir, 'ai-cleanup'), 'closed'); }
             });
           },

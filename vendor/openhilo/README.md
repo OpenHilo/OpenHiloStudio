@@ -6,12 +6,12 @@ These eleven archives contain the compiler, runtime, contracts and executors fro
 
 `manifest.json` records:
 
-- `sourceRepository` and `sourceCommit`: the exact publicly available upstream revision used for the build.
-- `patches`: currently empty. Cancellation, nested recovery and memory-observer fixes are included in the pinned upstream commit.
-- `archiveCommit`: the same upstream revision, identifying the source of all bundled archives.
+- `sourceRepository` and `sourceCommit`: the exact upstream revision used for the build.
+- `patches`: any explicit, hash-checked changes applied to that revision (currently empty).
+- `archiveCommit`: the same upstream revision, identifying the base source; apply the listed patches before building.
 - `packages`: archive SHA-256 values, package versions and source directories. The npm lockfile also records each archive's integrity.
 
-Core implementation remains maintained in OpenHilo. Studio builds these dependencies directly from the declared commit without carrying a separate runtime patch set. The dependency archives retain their own MIT copyright and redistribution notices.
+Core implementation remains maintained in OpenHilo. This pin uses the committed OpenHilo implementation without local patches. The dependency archives retain their own MIT copyright and redistribution notices.
 
 ## Rebuild from public source
 
@@ -21,9 +21,9 @@ With Node 22 or 24, npm, Git and Python 3, run:
 npm run check:core-source
 ```
 
-The command creates a temporary directory and a fresh home, clones the public repository anonymously, checks out the pinned commit, verifies any declared patches (none for the current pin), installs locked dependencies, builds and runs the core offline tests, then packs all eleven dependencies. It compares every packaged file byte and permission with the bundled archives. Declared CLI executable bits are normalized before packing; archive timestamps and compression metadata are not compared. Logs and `result.json` remain in the printed temporary directory. Installed or bundled packages are never replaced.
+The command creates a temporary directory and a fresh home, clones the public repository anonymously, checks out the pinned commit, verifies any declared patches, installs locked dependencies, builds and runs the core offline tests, then packs all eleven dependencies. It compares every packaged file byte and permission with the bundled archives. Declared CLI executable bits are normalized before packing; archive timestamps and compression metadata are not compared. Logs and `result.json` remain in the printed temporary directory. Installed or bundled packages are never replaced.
 
-Network access is needed for public Git and dependency downloads. No private checkout or account configuration is used.
+The pinned commit must be available on the remote before this public-source check can run. A local-only dependency update can be tested from its checkout and bundled archives before it is pushed. Network access is needed for public Git and dependency downloads. No private checkout or account configuration is used.
 
 ## Upgrade procedure
 
