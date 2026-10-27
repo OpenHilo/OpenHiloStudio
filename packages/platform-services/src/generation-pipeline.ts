@@ -215,5 +215,5 @@ export function createGenerationPipeline(config: GenerationPipelineConfig) {
     publishCandidate(preflight.candidate, entries.join(', ') || 'workflows');
   }
 
-  return { runPreflight, executeMerge };
+  return { sourceLayout: config.compileProgram ? 'modules' as const : 'legacy-files' as const, runPreflight, executeMerge };
 }

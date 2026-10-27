@@ -4,7 +4,7 @@
   "locks": [
     {
       "path": "package-lock.json",
-      "sha256": "1e8512a5c74ae2d925c849f02f5a7106b9104e1cff79930a91bdedab02780601",
+      "sha256": "4dd8c7ef87dba3534275857180b70750c9e2768f6d44b70f0533ded87cbbe538",
       "absentOptional": [
         {
           "from": "node_modules/@anthropic-ai/sdk",
@@ -1610,7 +1610,7 @@
       "name": "@openhilo/compiler",
       "version": "0.1.0",
       "license": "MIT",
-      "integrity": "sha512-KT1dTPjKXzU5yzsR48EWjXAMY7j92epsQUgi+pMXkKpPXg4bi+xb468qS6OliSCok0KeewvwaqBziFpkvPxy7Q==",
+      "integrity": "sha512-UI+NKUZA4F2PF4Poto16GoJy0KOElhjCdF7Udl+ZK3N7HzdwpBvkJ0y4C9cO5w/y6/8tnx1wckiE0LSJ6VQPjA==",
       "dev": false,
       "optional": false,
       "runtime": true,

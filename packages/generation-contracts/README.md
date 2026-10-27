@@ -18,3 +18,17 @@ can drain on close. Policies should forward it to their owned work; callers usin
 the older one-argument form remain supported. This live context is not persisted.
 
 Build with `npm run build --workspace @openhilo/generation-contracts`. The root generation integration test exercises this real generic prompt through clarification, a TypeScript diagnostic, repair and review while forbidding business imports.
+
+Hosts supply `sourceLayout` from the actual publication compiler: `legacy-files`
+(the compatibility default) or `modules`. Module entries use
+`namespace/file/exportName`; compatibility entries use `namespace/entry`.
+`createGenerationPipeline` exposes the selected layout and hosted sessions pass
+it to both initial generation and compiler repair. Selecting a different layout
+does not migrate existing published workflows or saved runs.
+
+The generic prompt asks for observable business stages, evidence for current
+facts, and distinct complete, partial and insufficient-evidence outcomes. AI may
+use tools granted by its runtime implementation; generation tools do not imply
+runtime permissions. These are generation guidance, not proof of research
+quality: review source, inspect actual retrieved evidence and test negative
+outcomes before trusting a generated workflow.

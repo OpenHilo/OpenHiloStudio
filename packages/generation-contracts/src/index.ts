@@ -19,7 +19,10 @@ export interface ClarificationAnswer {
   question: string;
   answer: string;
 }
+export type WorkflowSourceLayout = 'legacy-files' | 'modules';
 export interface GenerationPromptInput {
+  /** Actual publication compiler selected by the host, not a model preference. */
+  sourceLayout?: WorkflowSourceLayout;
   /** Host catalogue only; contains no credentials or provider identifiers. */
   aiRoutes?: Record<string, {defaultLevel: string; levels: string[]}>;
   naturalLanguage: string;

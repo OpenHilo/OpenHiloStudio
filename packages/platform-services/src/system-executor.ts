@@ -3,7 +3,7 @@ import type { CallNode, Value } from '@openhilo/itt-contracts';
 export interface SystemCaller { caller: string }
 import { FailableError } from '@openhilo/runtime-contracts';
 import type { EntityStore } from './entity-store';
-import { resolveBrainPath } from './brain-snapshot';
+import { listWorkflowFiles, resolveWorkflowFile } from './workflow-catalogue';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -110,26 +110,15 @@ function createSchedule(
         return dir;
       })();
 
-  // Parse namespace from intentName (e.g. "docs.generateDocs" → name="generateDocs", nsPath="docs")
-  const dotIdx = intentName.lastIndexOf('.');
-  const name   = dotIdx === -1 ? intentName : intentName.slice(dotIdx + 1);
-  const nsPath = dotIdx === -1 ? '' : intentName.slice(0, dotIdx).replace(/\./g, path.sep);
-
-  let resolvedIttPath: string;
-  if (ittHome) {
-    const found = resolveBrainPath(name, nsPath, ittHome);
-    if (!found) throw new FailableError(`Intent not found in Brain: '${intentName}'. Run: itt install <file>`);
-    resolvedIttPath = found;
-  } else {
-    // No ittHome configured — store bare filename (backward compat)
-    resolvedIttPath = `${name}.itt.json`;
-  }
+  const resolvedIttPath = ittHome
+    ? resolveWorkflowFile(intentName, path.join(ittHome, 'intents')).ittPath
+    : `${intentName.split('.').at(-1)}.itt.json`;
 
   const schedules = readSchedules(filePath);
   const assignedCron = flexible ? assignFlexibleSlot(cron, schedules) : undefined;
   const s: Schedule = {
     id: crypto.randomUUID(),
-    name: `${name}_scheduled`,
+    name: `${intentName.split('.').at(-1)}_scheduled`,
     cron,
     ittPath: resolvedIttPath,
     workdir,
@@ -274,47 +263,7 @@ async function callDirect(
 function scanIntents(config: Extract<SysExecutorConfig, { mode: 'direct' }>): { name: string; desc: string }[] {
   const dir = config.intentsDir;
   if (!dir) throw new FailableError('queryIntents: intentsDir not configured');
-  const byName = new Map<string, { name: string; desc: string; hasImpl: boolean }>();
-  const scan = (d: string, depth: number): void => {
-    if (depth > 3) return;
-    let entries: string[];
-    try { entries = fs.readdirSync(d); } catch { return; }
-    for (const entry of entries) {
-      const fullPath = path.join(d, entry);
-      let stat: ReturnType<typeof fs.statSync>;
-      try { stat = fs.statSync(fullPath); } catch { continue; }
-      if (stat.isDirectory()) { scan(fullPath, depth + 1); continue; }
-      let name: string; let hasImpl: boolean;
-      if (entry.endsWith('.itt.impl.json')) { name = entry.slice(0, -'.itt.impl.json'.length); hasImpl = true; }
-      else if (entry.endsWith('.itt.json')) { name = entry.slice(0, -'.itt.json'.length); hasImpl = false; }
-      else continue;
-      if (byName.get(name)?.hasImpl) continue;
-      try {
-        const parsed = JSON.parse(fs.readFileSync(fullPath, 'utf-8')) as { description?: string };
-        byName.set(name, { name, desc: parsed.description ?? '', hasImpl });
-      } catch { /* skip unreadable */ }
-    }
-  };
-  scan(dir, 0);
-  return Array.from(byName.values()).map(({ name, desc }) => ({ name, desc }));
-}
-
-function findIntentPath(name: string, dir: string, depth = 0): string | null {
-  if (depth > 3) return null;
-  let entries: string[];
-  try { entries = fs.readdirSync(dir); } catch { return null; }
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry);
-    let stat: ReturnType<typeof fs.statSync>;
-    try { stat = fs.statSync(fullPath); } catch { continue; }
-    if (stat.isDirectory()) {
-      const found = findIntentPath(name, fullPath, depth + 1);
-      if (found) return found;
-      continue;
-    }
-    if (entry === `${name}.itt.impl.json` || entry === `${name}.itt.json`) return fullPath;
-  }
-  return null;
+  return listWorkflowFiles(dir).map(({ name, desc }) => ({ name, desc }));
 }
 
 function getIntentInfo(
@@ -323,13 +272,11 @@ function getIntentInfo(
 ): { name: string; desc: string; inputs: Record<string, unknown>; outputs: Record<string, unknown> } {
   const dir = config.intentsDir;
   if (!dir) throw new FailableError('queryIntentInfo: intentsDir not configured');
-  const safeName = path.basename(name);
-  const found = findIntentPath(safeName, dir);
-  if (!found) throw new FailableError('Intent not found');
-  const parsed = JSON.parse(fs.readFileSync(found, 'utf-8')) as {
+  const found = resolveWorkflowFile(name, dir);
+  const parsed = JSON.parse(fs.readFileSync(found.ittPath, 'utf-8')) as {
     description?: string;
     inputs?: Record<string, unknown>;
     outputs?: Record<string, unknown>;
   };
-  return { name: safeName, desc: parsed.description ?? '', inputs: parsed.inputs ?? {}, outputs: parsed.outputs ?? {} };
+  return { name: found.name, desc: found.desc, inputs: parsed.inputs ?? {}, outputs: parsed.outputs ?? {} };
 }

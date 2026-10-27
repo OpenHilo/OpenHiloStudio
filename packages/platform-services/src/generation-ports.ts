@@ -32,6 +32,8 @@ export interface PreflightResult {
 }
 /** Synchronous lease ownership checks precede async AI and publication work. */
 export interface GenerationServices {
+  /** Omission preserves compatibility with older file-layout hosts. */
+  sourceLayout?: import('@openhilo/generation-contracts').WorkflowSourceLayout;
   checkoutWorktree(sessionId: string): string;
   assertWorktreeOwner(worktreePath: string, sessionId: string): void;
   returnWorktree(worktreePath: string, sessionId: string): string;

@@ -704,7 +704,7 @@ export class GenerationSession {
       const generationPrompt = this._buildGenerationPrompt();
       const prompt = {
         systemPrompt: generationPrompt.systemPrompt + '\n\nFix compiler diagnostics in the generated workflow source files. Use the task question interface if clarification is needed.',
-        userMessage: `${generationPrompt.userMessage}\n\nCompiler diagnostics:\n${compileErrors}\n\nCandidate source files:\n${JSON.stringify(changedFileContents)}\n\nFix these files, then return {"entries":["namespace/entry"]} listing the workflow entry points.`,
+        userMessage: `${generationPrompt.userMessage}\n\nCompiler diagnostics:\n${compileErrors}\n\nCandidate source files:\n${JSON.stringify(changedFileContents)}\n\nFix these files, then return the entries JSON using the publication compiler entry format specified above.`,
       };
       return await this._raceOrAwait(this._startAiTask(prompt, path.join(this._sessionDir, `fix-${attempt}`, 'prompt.md'), true));
     } catch (err) {
@@ -751,6 +751,7 @@ export class GenerationSession {
     this._validatePolicyData(restoredState);
     this._policyState = { ...this._policyState, data: JSON.parse(JSON.stringify(restoredState)) };
     return policy.buildPrompt({
+      sourceLayout: this.config.services?.sourceLayout ?? 'legacy-files',
       naturalLanguage: this._naturalLanguage,
       round: this._round,
       maxRounds: this.config.maxClarificationRounds,

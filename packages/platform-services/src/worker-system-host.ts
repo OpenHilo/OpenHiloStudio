@@ -6,7 +6,7 @@ import * as crypto from 'crypto';
 import type { EntityStore } from './entity-store';
 import type { WorkerMessage } from './worker-protocol';
 import { FailableError } from '@openhilo/runtime-contracts';
-import { parseCallee, findITTFiles } from './brain-snapshot';
+import { listWorkflowFiles, resolveWorkflowFile } from './workflow-catalogue';
 
 export interface WorkerScheduleService {
   list(): Promise<Array<{ id: string; ittPath: string; cron: string; inputs: Record<string, string> }>>;
@@ -126,50 +126,11 @@ export class WorkerSystemHost {
   }
 
   async queryIntents(): Promise<{ name: string; desc: string; ittPath: string; relativeIttPath: string }[]> {
-    const byName = new Map<string, { name: string; desc: string; ittPath: string; hasImpl: boolean }>();
-
-    if (!fs.existsSync(this.intentsDir)) return [];
-
-    // Flat layout: intents/<ns>/<intentName>/<intentName>.{itt.json,itt.impl.json}
-    for (const nsEntry of fs.readdirSync(this.intentsDir)) {
-      const nsPath = path.join(this.intentsDir, nsEntry);
-      let nsStat: fs.Stats;
-      try { nsStat = fs.statSync(nsPath); } catch { continue; }
-      if (!nsStat.isDirectory()) continue;
-
-      for (const intentEntry of fs.readdirSync(nsPath)) {
-        const intentDir = path.join(nsPath, intentEntry);
-        let intentStat: fs.Stats;
-        try { intentStat = fs.statSync(intentDir); } catch { continue; }
-        if (!intentStat.isDirectory()) continue;
-
-        const implPath = path.join(intentDir, `${intentEntry}.itt.impl.json`);
-        const leafPath = path.join(intentDir, `${intentEntry}.itt.json`);
-        const hasImpl = fs.existsSync(implPath);
-        const ittPath = hasImpl ? implPath : leafPath;
-
-        if (!fs.existsSync(ittPath)) continue;
-
-        const name = `${nsEntry}.${intentEntry}`;
-        const existing = byName.get(name);
-        if (existing && existing.hasImpl && !hasImpl) continue; // prefer .impl
-        try {
-          const parsed = JSON.parse(fs.readFileSync(ittPath, 'utf8')) as { description?: string };
-          byName.set(name, { name, desc: parsed.description ?? '', ittPath, hasImpl });
-        } catch {
-          // skip unreadable files
-        }
-      }
-    }
-
-    return Array.from(byName.values()).map(({ name, desc, ittPath }) => ({ name, desc, ittPath, relativeIttPath: path.relative(this.intentsDir, ittPath).split(path.sep).join('/') }));
+    return listWorkflowFiles(this.intentsDir);
   }
 
   async queryIntentInfo(name: string): Promise<{ name: string; desc: string; inputs: Record<string, unknown>; outputs: Record<string, unknown> }> {
-    // Use queryIntents() to resolve the correct path (handles flat and subdirectory layouts)
-    const all = await this.queryIntents();
-    const found = all.find(i => i.name === name);
-    if (!found) throw new FailableError('Intent not found');
+    const found = resolveWorkflowFile(name, this.intentsDir);
     const parsed = JSON.parse(fs.readFileSync(found.ittPath, 'utf8')) as {
       description?: string;
       inputs?: Record<string, unknown>;
@@ -189,11 +150,6 @@ export class WorkerSystemHost {
    * (e.g. "docs/generateDocs/generateDocs.itt.json") for storage in schedules.
    */
   resolveIttPath(logicalName: string): string {
-    const { intentName, nsPath } = parseCallee(logicalName, {});
-    const found = findITTFiles(intentName, nsPath, this.intentsDir);
-    if (found.length === 0) {
-      throw new FailableError(`Intent not found: ${logicalName}`);
-    }
-    return path.relative(this.intentsDir, found[0]);
+    return resolveWorkflowFile(logicalName, this.intentsDir).relativeIttPath;
   }
 }

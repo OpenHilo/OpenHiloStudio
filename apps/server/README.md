@@ -29,3 +29,13 @@ The frontend is a separate package. Serving its built directory does not change 
 `createServer` and `createLocalDeployment` accept `allowedHosts?: readonly string[]` for additional trusted DNS hostnames, without a scheme, port or wildcard. Localhost and IPv4/IPv6 literals remain accepted. For example, a trusted host can set `allowedHosts: ['studio.example']`. Host validation applies to reads as well as writes and does not trust `X-Forwarded-Host`.
 
 Browser mutations must be same-origin or match an explicit `corsOrigin` entry. Use exact origins such as `corsOrigin: ['https://studio.example']` only when a trusted browser frontend or TLS proxy requires them. `corsOrigin: true` opts into any HTTP(S) browser origin and is unsuitable for a restricted deployment. Reverse proxies must supply an allowed Host and use a matching explicit origin when the external scheme differs from the internal HTTP service. Native clients without browser origin headers still work; this is not authentication.
+
+## Generation compiler selection
+
+`createLocalDeployment` keeps the compatibility file layout unless the host
+supplies `generation.compileProgram`. Pass the core `compileProgram` function
+(or an application wrapper that adds metadata checks) to use the closed module
+graph and shared JSON type aliases. `generation.compileSource` selects a custom
+compatibility compiler; the two options are mutually exclusive. Generation and
+repair prompts receive this actual selection. Changing it requires reviewing
+existing entry identities and publication layout; it is not a data migration.

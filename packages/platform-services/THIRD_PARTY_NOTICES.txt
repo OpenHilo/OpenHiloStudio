@@ -52,7 +52,7 @@ No external runtime dependencies in this package closure.
 ================================================================================
 @openhilo/compiler@0.1.0
 Declared license: MIT
-Integrity: sha512-KT1dTPjKXzU5yzsR48EWjXAMY7j92epsQUgi+pMXkKpPXg4bi+xb468qS6OliSCok0KeewvwaqBziFpkvPxy7Q==
+Integrity: sha512-UI+NKUZA4F2PF4Poto16GoJy0KOElhjCdF7Udl+ZK3N7HzdwpBvkJ0y4C9cO5w/y6/8tnx1wckiE0LSJ6VQPjA==
 
 --- @openhilo/compiler@0.1.0/LICENSE ---
 SHA-256: 8ea4940b914928f40a3f91e22324ba700df3502c9607b1adf2ff6c5536e78e80

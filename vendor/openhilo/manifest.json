@@ -1,9 +1,9 @@
 {
   "sourceRepository": "https://github.com/OpenHilo/OpenHilo.git",
-  "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4",
-  "archiveCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4",
+  "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a",
+  "archiveCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a",
   "patches": [],
-  "note": "Built from the exact OpenHilo source commit. No local core patches. Archives verified locally; this update does not publish npm packages or push Git commits.",
+  "note": "Local installation archives built from the specified public OpenHilo commit. No npm publication.",
   "packages": [
     {
       "name": "@openhilo/itt-contracts",
@@ -11,7 +11,7 @@
       "file": "openhilo-itt-contracts-0.1.0.tgz",
       "previousSource": "packages/itt-contracts",
       "sha256": "6e17532d06d3ee5a6ba026fad404802085c0583f41c0257e79df80cd4963daf1",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/ai-contracts",
@@ -19,7 +19,7 @@
       "file": "openhilo-ai-contracts-0.1.0.tgz",
       "previousSource": "packages/ai-contracts",
       "sha256": "51a93a00a7957e6ee8aed186579f683908256ea7f4ea13850f6c29eec7b5c359",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/human-contracts",
@@ -27,7 +27,7 @@
       "file": "openhilo-human-contracts-0.1.0.tgz",
       "previousSource": "packages/human-contracts",
       "sha256": "b021461028b3f231b8e6731547881e65cdea573b55fd75527543f3866a362f14",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/runtime-contracts",
@@ -35,7 +35,7 @@
       "file": "openhilo-runtime-contracts-0.1.0.tgz",
       "previousSource": "packages/runtime-contracts",
       "sha256": "75203d883cd68572ac8a87bf33d155541918856a979cf3ff4c3253c10946abe1",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/studio-contracts",
@@ -43,15 +43,15 @@
       "file": "openhilo-studio-contracts-0.1.0.tgz",
       "previousSource": "packages/studio-contracts",
       "sha256": "6c80c7c59cab21269b00c8c969c2da835668bac69e2c04aa4bd44f5c6e29c4b0",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/compiler",
       "version": "0.1.0",
       "file": "openhilo-compiler-0.1.0.tgz",
       "previousSource": "packages/compiler",
-      "sha256": "2093146860ef6f4b5a95cc2d4bf491c2db7f49c91dd087ac6caae2d1346012e6",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sha256": "05dab3a0820d0c2484ddaa88db8b4dd0f09add431f5974736d3941110993a47a",
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/runtime",
@@ -59,7 +59,7 @@
       "file": "openhilo-runtime-0.1.0.tgz",
       "previousSource": "packages/runtime",
       "sha256": "36f793f57222501cd1c94fa0908adfcb1900dac6bb1d6fbce97a02db93c4b293",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/tool-host",
@@ -67,7 +67,7 @@
       "file": "openhilo-tool-host-0.1.0.tgz",
       "previousSource": "packages/tool-host",
       "sha256": "d704eb5e7ec014018341042a099d7ee02f01cccfb39f2eb14475ebc3eed96276",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/ai-codex",
@@ -75,7 +75,7 @@
       "file": "openhilo-ai-codex-0.1.0.tgz",
       "previousSource": "adapters/ai-codex",
       "sha256": "f1fcdb05c8101b3010c64ab9ed7e9699b959ca95ff1afcff1c57d37f20b62ee9",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/ai-sdk",
@@ -83,7 +83,7 @@
       "file": "openhilo-ai-sdk-0.1.0.tgz",
       "previousSource": "adapters/ai-sdk",
       "sha256": "f5515dc15535a9f9ec3bc11f9bbc33b43f3ef2c0c476563195c3593740ae15f9",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     },
     {
       "name": "@openhilo/code-local",
@@ -91,7 +91,7 @@
       "file": "openhilo-code-local-0.1.0.tgz",
       "previousSource": "adapters/code-local",
       "sha256": "a3ca4e9019915735595d9c966c81783cba693d37c5106f817c03aa8757d94cfc",
-      "sourceCommit": "158fa78a461e7f907559af0c82ca5fc1c83994f4"
+      "sourceCommit": "e66e33efcabe93d4ca4638c14e3a0cee311cb21a"
     }
   ]
 }

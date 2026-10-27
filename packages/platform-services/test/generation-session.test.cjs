@@ -28,6 +28,7 @@ function executor(run) { return { id: 'fixture', capabilities: ['structured_outp
 
 test('generic generation receives current runtime operation contracts on initial and repair attempts', async t => {
   const f = await fixture(t); const requests = [];
+  f.services.sourceLayout = 'modules';
   let preflights = 0;
   f.services.runPreflight = async () => ++preflights === 1
     ? { ...good(), ok: false, compileErrors: 'Repair the source' } : good();
@@ -38,6 +39,9 @@ test('generic generation receives current runtime operation contracts on initial
   assert.equal(requests.length, 2);
   const { platformSystemMethods } = require('@openhilo/platform-services/compiler-capabilities');
   for (const request of requests) {
+    assert.match(request.role, /Publication compiler: modules/);
+    assert.match(request.role, /namespace\/file\/exportName/);
+    assert.doesNotMatch(request.instruction, /entries.*namespace\/entry/);
     assert.ok(request.instruction.includes(JSON.stringify(platformSystemMethods)), 'AI receives the compiler operation catalogue, including createEntity argument order and named outputs');
   }
   const { buildGenericPrompt } = require('@openhilo/generation-contracts');
